@@ -23,6 +23,26 @@
 					
 	  				// navigationBarBackgroundColor:"#3F536E",
 	  			}
+	  },
+	  {
+	  			"path": "pages/topList/rubbish",
+	  			"style": {
+	  				"navigationBarTitleText": "垃圾分类",
+	  				"navigationBarBackgroundColor":"#19BE6B"
+	  					
+	  					
+	  				// navigationBarBackgroundColor:"#3F536E",
+	  			}
+	  },
+	  {
+	  			"path": "pages/topList/weather",
+	  			"style": {
+	  				"navigationBarTitleText": "天气查询",
+	  				"navigationBarBackgroundColor":"#19BE6B"
+	  					
+	  					
+	  				// navigationBarBackgroundColor:"#3F536E",
+	  			}
 	  }
     ],
 	"globalStyle": {

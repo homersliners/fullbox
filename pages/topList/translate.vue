@@ -1,13 +1,14 @@
+<!-- admin：林轩 -->
 <template>
 	<view>
 		<!-- 顶部选择下拉框 -->
 		<view class="wrap">
 			<u-row gutter="16">
 				<u-col span="4">
-					<view>
-						<u-input v-model="tratypeLeft" type="select" @click="traleft = true" placeholder="自动" />
-						<u-action-sheet :list="actionSheetList" v-model="traleft" @click="startlanguage"></u-action-sheet>
-					</view>
+					<!-- <view> -->
+						<!-- <u-input v-model="tratypeLeft" type="select" @click="traleft = true" placeholder="自动" /> -->
+						<!-- <u-action-sheet :list="actionSheetList" v-model="traleft" @click="startlanguage"></u-action-sheet> -->
+					<!-- </view> -->
 				</u-col>
 				<u-col span="4"></u-col>
 				<u-col span="4">
@@ -21,15 +22,16 @@
 
 		<!-- 翻译输入内容 -->
 		<view class="inputbox">
-			<u-input placeholder="请输入翻译的内容" v-model="inputText" border="true" type="textarea" class="inputText"></u-input>
+			<u-input placeholder="请输入翻译的内容" v-model="inputText" :border="inputborder" type="textarea" class="inputText"></u-input>
 		</view>
 		<view>
 			<!-- 翻译按键 -->
 			<u-button type="success" class="tranbtn" @click="translate()">{{btnname}}</u-button>
 		</view>
 		<view class="outputbox">
-			<u-input placeholder="翻译的结果" v-model="outputText" border="true" type="textarea" class="inputText"></u-input>
+			<u-input placeholder="翻译的结果" v-model="outputText" :border="inputborder" type="textarea" class="inputText"></u-input>
 		</view>
+		<u-toast ref="uToast" />
 	</view>
 </template>
 
@@ -37,6 +39,7 @@
 	export default {
 		data() {
 			return {
+				inputborder:true,
 				btnname: '翻译',
 				outputText: '',
 				inputText: '',
@@ -71,11 +74,15 @@
 			//启动翻译
 			translate() {
 				if (this.inputText != "") {
-					console.log("success");
+					// console.log("success");
 					this.translateOk();
 					// this.aaa();
 				} else {
-					console.log("请输入内容");
+					this.$refs.uToast.show({
+						title: '请输入内容喔',
+						type: 'warn',
+
+					})
 				}
 
 			},
@@ -114,18 +121,18 @@
 						},
 
 					success: (res) => {
-						console.log(res);
+						// console.log(res);
 						this.btnname = "翻译";
-						res.code==200?this.outputText = res.data.data.Translation:this.outputText = "翻译失败";
+						this.outputText = res.data.data.Translation;
 						
 					},
 					fail: (res) => {
-						console.log('fail');
+						// console.log('fail');
 						this.btnname = "翻译";
 						this.outputText = "翻译失败";
 					},
 					complete: (res) => {
-						console.log('complete');
+						// console.log('complete');
 					}
 				});
 			}

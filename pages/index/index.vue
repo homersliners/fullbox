@@ -1,3 +1,6 @@
+<!-- 首页
+	admin：林轩
+ -->
 <template>
 	<view>
 		<view class="topbar">
@@ -55,9 +58,13 @@
 		},
 		methods:{
 			changepage(idx){
-				idx==0?uni.navigateTo({
-					url:'../topList/translate'
-				}):null;
+				uni.navigateTo({
+					url:itemboxExtend.itemBox[idx].url
+				})
+				// console.log(itemboxExtend.itemBox[idx].url);
+				// idx==0?uni.navigateTo({
+				// 	url:'../topList/translate'
+				// }):null;
 			}
 		}
 	}

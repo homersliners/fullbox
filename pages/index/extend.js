@@ -3,14 +3,17 @@ export const itemboxExtend = {
    	{
    		icon:"google",
    		title:"翻译器",
+		url:'../topList/translate'
    	},
    	{
    		icon:"bag",
    		title:"垃圾分类",
+		url:'../topList/rubbish'
    	},
    	{
    		icon:"home",
    		title:"天气查询",
+		url:'../topList/weather'
    	}
    ],
   itemBoxTwo:[
