@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "天气查询",
+  "navigationBarBackgroundColor": "#19BE6B",
+  "usingComponents": {
+    "u-input": "/node-modules/uview-ui/components/u-input/u-input",
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button",
+    "u-row": "/node-modules/uview-ui/components/u-row/u-row",
+    "u-col": "/node-modules/uview-ui/components/u-col/u-col",
+    "u-toast": "/node-modules/uview-ui/components/u-toast/u-toast"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "垃圾分类",
+  "navigationBarBackgroundColor": "#19BE6B",
+  "usingComponents": {
+    "u-input": "/node-modules/uview-ui/components/u-input/u-input",
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button",
+    "u-card": "/node-modules/uview-ui/components/u-card/u-card",
+    "u-toast": "/node-modules/uview-ui/components/u-toast/u-toast"
+  }
+}

@@ -1,10 +1,11 @@
 {
-  "navigationStyle": "custom",
-  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "",
+  "navigationBarBackgroundColor": "#19BE6B",
   "usingComponents": {
-    "u-navbar": "/node-modules/uview-ui/components/u-navbar/u-navbar",
     "u-cell-group": "/node-modules/uview-ui/components/u-cell-group/u-cell-group",
     "u-cell-item": "/node-modules/uview-ui/components/u-cell-item/u-cell-item",
-    "u-divider": "/node-modules/uview-ui/components/u-divider/u-divider"
+    "u-row": "/node-modules/uview-ui/components/u-row/u-row",
+    "u-col": "/node-modules/uview-ui/components/u-col/u-col",
+    "u-button": "/node-modules/uview-ui/components/u-button/u-button"
   }
 }

@@ -1,50 +1,95 @@
 {
 	//很重要啊啊啊啊
-	    "easycom": {
-	        "^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
-	    },
+	"easycom": {
+		"^u-(.*)": "uview-ui/components/u-$1/u-$1.vue"
+	},
 
 
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	"pages": [
+
 		{
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "",
-				"navigationBarBackgroundColor":"#19BE6B"
+				"navigationBarBackgroundColor": "#19BE6B"
 				// navigationBarBackgroundColor:"#3F536E",
 			}
-	  },
-	  {
-	  			"path": "pages/topList/translate",
-	  			"style": {
-	  				"navigationBarTitleText": "翻译器",
-	  				"navigationBarBackgroundColor":"#19BE6B"
-					
-					
-	  				// navigationBarBackgroundColor:"#3F536E",
-	  			}
-	  },
-	  {
-	  			"path": "pages/topList/rubbish",
-	  			"style": {
-	  				"navigationBarTitleText": "垃圾分类",
-	  				"navigationBarBackgroundColor":"#19BE6B"
-	  					
-	  					
-	  				// navigationBarBackgroundColor:"#3F536E",
-	  			}
-	  },
-	  {
-	  			"path": "pages/topList/weather",
-	  			"style": {
-	  				"navigationBarTitleText": "天气查询",
-	  				"navigationBarBackgroundColor":"#19BE6B"
-	  					
-	  					
-	  				// navigationBarBackgroundColor:"#3F536E",
-	  			}
-	  }
-    ],
+		},
+		{
+			"path": "pages/topList/translate",
+			"style": {
+				"navigationBarTitleText": "翻译器",
+				"navigationBarBackgroundColor": "#19BE6B"
+
+
+				// navigationBarBackgroundColor:"#3F536E",
+			}
+		},
+		{
+			"path": "pages/topList/rubbish",
+			"style": {
+				"navigationBarTitleText": "垃圾分类",
+				"navigationBarBackgroundColor": "#19BE6B"
+
+
+				// navigationBarBackgroundColor:"#3F536E",
+			}
+		},
+		{
+			"path": "pages/topList/weather",
+			"style": {
+				"navigationBarTitleText": "天气查询",
+				"navigationBarBackgroundColor": "#19BE6B"
+
+
+				// navigationBarBackgroundColor:"#3F536E",
+			}
+		},
+		{
+			"path": "pages/saoList/pcsoup",
+			"style": {
+				"navigationBarTitleText": "毒鸡汤",
+				"navigationBarBackgroundColor": "#19BE6B"
+			}
+		},
+		{
+			"path": "pages/saoList/joke",
+			"style": {
+				"navigationBarTitleText": "随机笑话",
+				"navigationBarBackgroundColor": "#19BE6B"
+			}
+		},
+		{
+			"path": "pages/saoList/idiom",
+			"style": {
+				"navigationBarTitleText": "成语接龙",
+				"navigationBarBackgroundColor": "#19BE6B"
+			}
+		},
+		{
+			"path": "pages/saoList/lickdog",
+			"style": {
+				"navigationBarTitleText": "舔狗日记",
+				"navigationBarBackgroundColor": "#19BE6B"
+			}
+		},
+		{
+			"path": "pages/saoList/poms",
+			"style": {
+				"navigationBarTitleText": "古诗词",
+				"navigationBarBackgroundColor": "#19BE6B"
+			}
+		},
+		{
+			"path": "pages/saoList/rainbowfart",
+			"style": {
+				"navigationBarTitleText": "彩虹屁",
+				"navigationBarBackgroundColor": "#19BE6B"
+			}
+		}
+
+
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

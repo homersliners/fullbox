@@ -1,6 +1,9 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/topList/translate",
+    "pages/topList/rubbish",
+    "pages/topList/weather"
   ],
   "subPackages": [],
   "window": {

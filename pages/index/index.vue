@@ -5,7 +5,9 @@
 	<view>
 		<view class="topbar">
 			百宝袋
+			<text class="subtitles">{{subtitles}}</text>
 		</view>
+		
 		<u-cell-group title="日常">
 			<view v-for="(item,index) in itemBox">
 				<u-cell-item :icon=item.icon :title=item.title @click="changepage(index)"></u-cell-item>
@@ -20,7 +22,7 @@
 				<u-row gutter="16">
 					<u-col span="3" v-for="(item,index) in itemBoxTwo">
 						<view class="demo-layout bg-purple">
-							<u-button>{{item.title}}</u-button>
+							<u-button @click="saocclick(index)">{{item.title}}</u-button>
 						</view>
 					</u-col>
 				</u-row>
@@ -53,10 +55,18 @@
 			return {
 				itemBox: itemboxExtend.itemBox,
 				itemBoxTwo: itemboxExtend.itemBoxTwo,
-				itemBoxThree:itemboxExtend.itemBoxThree
+				itemBoxThree:itemboxExtend.itemBoxThree,
+				subtitles:'加油,打工人',
 			}
 		},
 		methods:{
+			saocclick(idx){
+				// console.log(itemboxExtend.itemBoxTwo[idx].url);
+				uni.navigateTo({
+					url:itemboxExtend.itemBoxTwo[idx].url
+					
+				})
+			},
 			changepage(idx){
 				uni.navigateTo({
 					url:itemboxExtend.itemBox[idx].url
@@ -65,7 +75,16 @@
 				// idx==0?uni.navigateTo({
 				// 	url:'../topList/translate'
 				// }):null;
+			},
+			nowtime(){
+				let data = new Date();
+				if(data.getHours()>22 || data.getHours()<5){
+					this.subtitles = "晚安,不要熬夜了喔"
+				}
 			}
+		},
+		created(){
+			this.nowtime();
 		}
 	}
 </script>
@@ -102,9 +121,15 @@
 		width: 750rpx;
 		height: 150rpx;
 		background-color: #19BE6B;
-		text-align: center;
+		text-align: left;
+		padding-left: 20rpx;
 		line-height: 180rpx;
 		font-size: 60rpx;
 		color: #FFFFFF;
+		
+		.subtitles{
+			font-size: 23rpx;
+			margin-left: 30rpx;
+		}
 		}
 </style>

@@ -1,15 +1,21 @@
 <template>
 	<view class="topbox">
-		<u-input v-model="cityinput" placeholder="请选择城市(仅限国内)" :border="inputborder" style="margin: 10rpx;"></u-input>
-		<u-button style="margin: 10rpx;" type="success" @click="success()">{{btnname}}</u-button>
+		<view style="margin: 10rpx;">
+			<u-input v-model="cityinput" placeholder="请选择城市(仅限国内)" :border="inputborder" style="margin: 10rpx;"></u-input>
+			<u-button style="margin: 10rpx;" type="success" @click="success()">{{btnname}}</u-button>
+		</view>
+	
 		<view>
 			<!-- <u-image width="750rpx" height="300rpx"></u-image> -->
+			<u-cell-group>
+				<u-cell-item :title="typetitle" :arrow="false"></u-cell-item>
+			</u-cell-group>
+			<!-- <view class="todaybox">今天 {{todaysmonth}}月{{todayDays}}号</view> -->
 			<view class="wrap">
 				<u-row gutter="16">
-
 					<u-col span="4" class="otherBox" v-for="item in boxs">
 						{{item.name}}<br>
-						<text class="smallText" style=" font-size: 35rpx;">{{item.data}}</text>
+						<text class="smallText" style=" font-size: 32rpx;">{{item.data}}</text>
 					</u-col>
 				</u-row>
 			</view>
@@ -24,7 +30,10 @@
 			return {
 				inputborder:true,
 				btnname: '确定',
+				typetitle:"今天",
 				cityinput: '',
+				todaysmonth:new Date().getMonth()+1,
+				todayDays:new Date().getDay(),
 				boxs: [{
 						name: "天气",
 						data: "#",
@@ -73,7 +82,7 @@
 								this.btnname ="确认";
 								let successbox = res.data.data;
 								this.boxs[0].data = successbox.weather;
-								this.boxs[1].data = successbox.temp;
+								this.boxs[1].data = successbox.temp+"℃";
 								this.boxs[2].data = successbox.WD;
 								this.boxs[3].data = successbox.WS;
 								this.boxs[4].data = successbox.SD;
@@ -122,13 +131,20 @@
 	.otherBox {
 		/* background-color: #007AFF; */
 		height: 140rpx;
-		font-size: 25rpx;
+		font-size: 21rpx;
 		line-height: 50rpx;
+		/* margin: 10rpx; */
 		/* margin-left: 30rpx; */
 		text-align: center;
 
 	}
-
+.todaybox{
+	padding: 24rpx;
+	background-color: #f8f8f8;
+	border-radius: 20rpx;
+	margin: 10rpx;
+	
+}
 	.wrap {
 		padding: 24rpx;
 		background-color: #f1f1f1;

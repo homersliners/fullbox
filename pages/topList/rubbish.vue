@@ -1,8 +1,11 @@
 <!-- admin：林轩 -->
 <template>
 	<view class="boxStyle">
-		<u-input class="boxStyleInput" placeholder="你是什么垃圾" :border='inputborder' v-model="inputdata" />
-		<u-button type="success" class="boxStyleButton" @click="find()">{{btnname}}</u-button>
+		<view style="margin: 10rpx;">
+			<u-input class="boxStyleInput" placeholder="你是什么垃圾" :border='inputborder' v-model="inputdata" />
+			<u-button type="success" class="boxStyleButton" @click="find()">{{btnname}}</u-button>
+		</view>
+
 		<!-- <u-input v-model="outtext" border="true" class="boxStyleInput" placeholder=""></u-input> -->
 		<view class="commitBox" v-show="showDescription==true">
 			<u-card title="类型">
@@ -33,7 +36,7 @@
 			return {
 				inputborder: true,
 				inputdata: "",
-				inputdatadomo:'',
+				inputdatadomo: '',
 				btnname: '查一下',
 				Type: '',
 				showDescription: false,
@@ -65,12 +68,13 @@
 								this.showDescription = true;
 								//显示属性
 								this.Type = res.data.data.Type;
-								res.data.data.Description.Concept != null ? this.Description.Concept ="(" +  res.data.data.Description.Concept +")":
+								res.data.data.Description.Concept != null ? this.Description.Concept = "(" + res.data.data.Description.Concept +
+									")" :
 									this.Description.Concept = "";
 								//同类
-								res.data.data.Description.Including != null ? this.Description.Including = res.data.data.Description.Including 
-									 : this.Description.Including = "无";
-									//建议
+								res.data.data.Description.Including != null ? this.Description.Including = res.data.data.Description.Including :
+									this.Description.Including = "无";
+								//建议
 								res.data.data.Description.Release_requirement != null ? this.Description.Release_requirement = res.data.data
 									.Description.Release_requirement : this.Description.Release_requirement = "无";
 							} else {

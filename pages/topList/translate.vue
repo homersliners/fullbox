@@ -24,12 +24,12 @@
 		<view class="inputbox">
 			<u-input placeholder="请输入翻译的内容" v-model="inputText" :border="inputborder" type="textarea" class="inputText"></u-input>
 		</view>
-		<view>
+		<view style="margin: 10rpx;">
 			<!-- 翻译按键 -->
 			<u-button type="success" class="tranbtn" @click="translate()">{{btnname}}</u-button>
 		</view>
 		<view class="outputbox">
-			<u-input placeholder="翻译的结果" v-model="outputText" :border="inputborder" type="textarea" class="inputText"></u-input>
+			<u-input placeholder="翻译的结果" v-model="outputText" :border="inputborder" type="textarea" class="inputText" :disabled="disabledtype"></u-input>
 		</view>
 		<u-toast ref="uToast" />
 	</view>
@@ -40,6 +40,7 @@
 		data() {
 			return {
 				inputborder:true,
+				disabledtype:true,
 				btnname: '翻译',
 				outputText: '',
 				inputText: '',
